@@ -1,17 +1,18 @@
 import React from 'react'
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { View, Text, Image, StyleSheet } from 'react-native'
 
-import AppHeader3 from './AppHeader3'
+import AppHeaderThree from './AppHeaderThree'
 import AppText from './AppText'
 
-const Card = () => {
+const Card = ({title, subTitle, image }) => {
     return (
         <View style={styles.card}>
-            <Image style={styles.image} source={require("../../../assets/Blackchair2.jpg")}/>
+            <Image style={styles.image} resizeMode='contain' source={image}/>
             <View style={styles.cardBody}>
-                <AppHeader3 style={styles.title}>Title</AppHeader3>
-                 <AppText style={styles.price}>$100</AppText> 
-                 <AppText style={styles.detail}>Lorem, ipsum dolor.</AppText>
+                {/* <AppHeaderThree style={styles.title}>Product</AppHeaderThree> */}
+                <AppHeaderThree>{title}</AppHeaderThree>
+                <AppText style={styles.price}>{subTitle}</AppText>
             </View>
         </View>
     )
@@ -20,36 +21,30 @@ const Card = () => {
 const styles = StyleSheet.create({
     card : {
         borderRadius: 15,
-        // flexDirection: 'column',
         width: '100%',
-        alignItems: 'center',
         flex:1,
-        paddingHorizontal:20
+        paddingHorizontal:20,
+        marginVertical: 10
     },
     image: {
         width: "100%",
-        height: 400,
-        // alignSelf: "center"
+        height: 200,
     },
     cardBody: {
-        width:"100%",
-        alignSelf: "start",
-        paddingVertical: 20,
-        // alignSelf: "start"
-
-
-        // justifyContent:"flex-start",
-
+        marginTop:10
     },
     title: {
-        marginBottom: 7,
+        fontSize: RFPercentage(3.5), 
+        // height: 30,
     },
     price: {
         fontWeight: "bold",
     },
     detail: {
-        fontWeight: "500",
+        width: "100%"
+        // position: 'absolute',
     }
 
 });
+
 export default Card;

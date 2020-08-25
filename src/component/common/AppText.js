@@ -1,12 +1,16 @@
 import React, { Children } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet, Platform} from 'react-native'
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 const AppText = ({children}) => {
-    return (
-        <View>
-            <Text>{children}</Text>
-        </View>
-    )
+    return <Text>{children}</Text>
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: RFPercentage(2),
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+  },
+});
 
 export default AppText

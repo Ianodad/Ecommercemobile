@@ -21,7 +21,7 @@ Awesome starter template to help you build mobile app with React native and Expo
 #### Clone this repository
 
 ```
-git clone https://github.com/ianodad
+git clone https://github.com/Ianodad/Ecommercemobile.git
 ```
 
 #### Install dependencies
